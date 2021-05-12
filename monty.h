@@ -1,6 +1,8 @@
 #ifndef MONTY_H
 #define MONTY_H
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 /*Libraries*/
 
 /**
@@ -34,5 +36,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /*Prototypes of the functions*/
+char **toke_line(char *line);
+void open_file(char *monty_file);
 
 #endif
