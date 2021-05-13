@@ -19,10 +19,10 @@ void open_file(char *monty_file)
 	}
 	while (getline(&vars.buffer, &sizeBuffer, file) != EOF)
 	{
+		line_number++;
 		if (vars.buffer[0] != '#')
 		{
 			vars.tokens = toke_line(vars.buffer);
-			line_number++;
 			if (vars.tokens[1] != NULL)
 				vars.number = atoi(vars.tokens[1]);
 			get_function(vars.tokens[0], line_number)(&stack,
