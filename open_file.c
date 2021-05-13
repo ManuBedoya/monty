@@ -4,9 +4,8 @@ void open_file(char *monty_file)
 	char *buffer = NULL, **tokens = NULL;
 	stack_t *stack = NULL;
 	size_t sizeBuffer = 0;
-	unsigned int line_number = 0;
+	unsigned int line_number = 0, number = 0;
 	FILE *file = fopen(monty_file, "r");
-	/*void (*chosen_function)(stack_t **stack, unsigned int line_number);*/
 
 	if (!file)
 	{
@@ -18,6 +17,9 @@ void open_file(char *monty_file)
 	{
 		tokens = toke_line(buffer);
 		line_number++;
-		get_function(tokens[0], line_number)(&stack, line_number);
+		if (tokens[1] != NULL)
+			number = atoi(tokens[1]);
+		get_function(tokens[0], line_number)(&stack, number);
 	}
+	fclose(file);
 }

@@ -5,7 +5,7 @@
 #include <string.h>
 
 /*Global variable*/
-/*#define LINE_NUMBER 0*/
+extern int number;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

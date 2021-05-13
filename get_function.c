@@ -9,8 +9,8 @@ void (*get_function(char *opcode, unsigned int lineN))(stack_t **, unsigned int)
 
 	instruction_t op_function[] = {
 		{"push", push_function},
-		/*{"pall", pall_function},
-		{"pint", pint_function},
+		{"pall", pall_function},
+		/*{"pint", pint_function},
 		{"pop", pop_function},
 		{"swap", swap_function},
 		{"add", add_function},*/
