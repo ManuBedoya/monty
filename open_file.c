@@ -25,6 +25,9 @@ void open_file(char *monty_file)
 		if (tokens[1] != NULL)
 			number = atoi(tokens[1]);
 		get_function(tokens[0], line_number)(&stack, line_number);
+		free(tokens);
 	}
+	free_stack(stack);
+	free(buffer);
 	fclose(file);
 }

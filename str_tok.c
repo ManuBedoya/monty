@@ -12,6 +12,7 @@ char **toke_line(char *line)
 	arguments_token = malloc(sizeof(char *) * size);
 	if (!arguments_token)
 	{
+		free(arguments_token);
 		fprintf(stderr, "malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
