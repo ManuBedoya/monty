@@ -15,7 +15,7 @@ void push_function(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (vars.number == 0)
+	if (!vars.tokens[1])
 	{
 		free(node);
 		free_stack(*stack);
