@@ -125,5 +125,11 @@ void pchar_function(stack_t **stack, unsigned int line_number)
 	aux = *stack;
 	while (aux->next != NULL)
 		aux = aux->next;
-	fprintf(stdout, "%c\n", aux->n);
+	if (aux->n >= 0 && aux->n <= 127)
+		fprintf(stdout, "%c\n", aux->n);
+	else
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n",
+			line_number);
+	}
 }
