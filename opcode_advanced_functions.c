@@ -107,3 +107,23 @@ void mod_function(stack_t **stack, unsigned int line_number)
 	free(aux->next);
 	aux->next = NULL;
 }
+/**
+ *pchar_function - print a character
+ *@stack: list
+ *@line_number: line number
+ */
+void pchar_function(stack_t **stack, unsigned int line_number)
+{
+	stack_t *aux;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	aux = *stack;
+	while (aux->next != NULL)
+		aux = aux->next;
+	fprintf(stdout, "%c\n", aux->n);
+}
