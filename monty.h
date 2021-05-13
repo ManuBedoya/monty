@@ -3,7 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-/*Libraries*/
+
+/*Global variable*/
+/*#define LINE_NUMBER 0*/
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,5 +40,13 @@ typedef struct instruction_s
 /*Prototypes of the functions*/
 char **toke_line(char *line);
 void open_file(char *monty_file);
+void (*get_function(char *opcode, unsigned int lineN))(stack_t **, unsigned int);
+void push_function(stack_t **stack, unsigned int line_number);
+void nop_function(stack_t **stack, unsigned int line_number);
+void pall_function(stack_t **stack, unsigned int line_number);
+void pint_function(stack_t **stack, unsigned int line_number);
+void pop_function(stack_t **stack, unsigned int line_number);
+void swap_function(stack_t **stack, unsigned int line_number);
+void add_function(stack_t **stack, unsigned int line_number);
 
 #endif

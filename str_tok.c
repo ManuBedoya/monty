@@ -10,11 +10,11 @@ char **toke_line(char *line)
 		fprintf(stderr, "malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	token = strtok(line, " ");
+	token = strtok(line, " '\n'");
 	while (token != NULL)
 	{
 		arguments_token[i++] = token;
-		token = strtok(NULL, " ");
+		token = strtok(NULL, " '\n'");
 	}
 	return (arguments_token);
 }

@@ -1,2 +1,3 @@
-prueba 1
-linea2 2
+nop
+push 2
+hola
