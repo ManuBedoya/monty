@@ -15,19 +15,23 @@ void push_function(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (number == 0)
+	if (vars.number == 0)
 	{
+		free(node);
+		free_stack(*stack);
+		free(vars.buffer);
+		free(vars.tokens);
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	node->prev = NULL;
 	node->next = NULL;
-	node->n = number;
+	node->n = vars.number;
 
 	if (*stack == NULL)
 	{
 		*stack = node;
-		number = 0;
+		vars.number = 0;
 		return;
 	}
 
@@ -35,7 +39,7 @@ void push_function(stack_t **stack, unsigned int line_number)
 		aux = aux->next;
 	aux->next = node;
 	node->prev = aux;
-	number = 0;
+	vars.number = 0;
 }
 
 /**

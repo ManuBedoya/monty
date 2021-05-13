@@ -3,10 +3,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-/*Global variable*/
-extern int number;
-int number;
+/**
+ *struct variables - variables to use any file
+ *@tokens: tokens
+ *@buffer: line
+ *@number: value
+ *
+ *Description: Structure storage all variables
+ */
+typedef struct variables
+{
+	char **tokens;
+	char *buffer;
+	int number;
+} variable_t;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -37,6 +47,12 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+
+/*Global variable*/
+extern variable_t vars;
+variable_t vars;
+
 
 /*Prototypes of the functions*/
 
