@@ -125,7 +125,7 @@ void pchar_function(stack_t **stack, unsigned int line_number)
 	aux = *stack;
 	while (aux->next != NULL)
 		aux = aux->next;
-	if (aux->n >= 32 && aux->n <= 126)
+	if (aux->n >= 0 && aux->n <= 127)
 		fprintf(stdout, "%c\n", aux->n);
 	else
 	{
