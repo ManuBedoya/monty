@@ -131,5 +131,6 @@ void pchar_function(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n",
 			line_number);
+		exit(EXIT_FAILURE);
 	}
 }
