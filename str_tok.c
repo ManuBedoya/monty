@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * toke_line - tokenizes the strings
+ * @line: String to be tokenize
+ * Return: Array of tokenized strings
+ */
 char **toke_line(char *line)
 {
 	char *token, **arguments_token;

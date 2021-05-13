@@ -6,6 +6,7 @@
 
 /*Global variable*/
 extern int number;
+int number;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,9 +39,10 @@ typedef struct instruction_s
 } instruction_t;
 
 /*Prototypes of the functions*/
+
 char **toke_line(char *line);
 void open_file(char *monty_file);
-void (*get_function(char *opcode, unsigned int lineN))(stack_t **, unsigned int);
+void (*get_function(char *op, unsigned int lineN))(stack_t **, unsigned int);
 void push_function(stack_t **stack, unsigned int line_number);
 void nop_function(stack_t **stack, unsigned int line_number);
 void pall_function(stack_t **stack, unsigned int line_number);
